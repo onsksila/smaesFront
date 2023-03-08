@@ -25,11 +25,11 @@ function VariableOutputForm({ SubmitOutputVar, varOutput }) {
   const [state, setState] = useState({
     idOutputVar: uuidv4(),
     varName: "",
-    varType: "",
-    varValue: "",
-    varDefaultValue: "",
-    varEnum: "",
-    varReadOnly: "",
+    type: "",
+    value: "",
+    default: "",
+    enum: "",
+    readonly: "",
   });
   const onChangeCheck = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -38,9 +38,9 @@ function VariableOutputForm({ SubmitOutputVar, varOutput }) {
   const onChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
-  const splitedTypes = varOutput.varType.includes("|")
-    ? varOutput.varType.split("|")
-    : varOutput.varType;
+  const splitedTypes = varOutput.type.includes("|")
+    ? varOutput.type.split("|")
+    : varOutput.type;
 
   const displayTypes =
     typeof splitedTypes === "object" ? (
@@ -91,37 +91,37 @@ function VariableOutputForm({ SubmitOutputVar, varOutput }) {
             <Element>
               <Label htmlFor="type">Type:</Label>
               <InputWrapper>
-                <Input type="text" name="varType" onChange={onChange} />
+                <Input type="text" name="type" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="value">Value:</Label>
               <InputWrapper>
-                <Input type="text" name="varValue" onChange={onChange} />
+                <Input type="text" name="value" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="default">Default value:</Label>
               <InputWrapper>
-                <Input type="text" name="varDefaultValue" onChange={onChange} />
+                <Input type="text" name="default" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="enum">Enum :</Label>
               <InputWrapper>
-                <Input type="text" name="varEnum" onChange={onChange} />
+                <Input type="text" name="enum" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="readonly">Read only:</Label>
-              <Input type="checkbox" name="varReadOnly" onChange={onChange} />
+              <Input type="checkbox" name="readonly" onChange={onChange} />
               {/*<Label htmlFor="readonly">Read only:</Label>
               <CheckboxWrapper>
                 <Check
                   checkedOut={checkedOut}
                   onChange={onChangeCheck}
                   id="checkedOut"
-                  name="varReadOnly"
+                  name="readonly"
                 />
                 <Checkmark htmlFor="checkedOut" checkedOut={checkedOut} />
         </CheckboxWrapper>*/}

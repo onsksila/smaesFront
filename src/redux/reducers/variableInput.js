@@ -19,11 +19,11 @@ export default function (state = initialState, action) {
           {
             idInputVar: payload.idInputVar,
             varName: payload.varName,
-            varType: payload.varType,
-            varValue: payload.varValue,
-            varDefaultValue: payload.varDefaultValue,
-            varEnum: payload.varEnum,
-            varReadOnly: payload.varReadOnly,
+            type: payload.type,
+            value: payload.value,
+            default: payload.default,
+            enum: payload.enum,
+            readonly: payload.readonly,
           },
         ].filter((varInput) => varInput.varName !== ""),
       };
@@ -46,11 +46,11 @@ export default function (state = initialState, action) {
           ...state.SubmittedInputVars,
           {
             varName: "",
-            varType: "",
-            varValue: "",
-            varDefaultValue: "",
-            varEnum: "",
-            varReadOnly: "",
+            type: "",
+            value: "",
+            default: "",
+            enum: "",
+            readonly: "",
           },
         ],
       };
@@ -62,11 +62,11 @@ export default function (state = initialState, action) {
             return {
               ...inputVar,
               varName: action.payload.varName,
-              varType: action.payload.varType,
-              varValue: action.payload.varValue,
-              varDefaultValue: action.payload.varDefaultValue,
-              varEnum: action.payload.varEnum,
-              varReadOnly: action.payload.varReadOnly,
+              type: action.payload.type,
+              value: action.payload.value,
+              default: action.payload.default,
+              enum: action.payload.enum,
+              readonly: action.payload.readonly,
             };
           }
           return inputVar;

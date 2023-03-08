@@ -27,11 +27,11 @@ function VariableInputForm({ SubmitInputVar, varInput }) {
   const [state, setState] = useState({
     idInputVar: uuidv4(),
     varName: "",
-    varType: "",
-    varValue: "",
-    varDefaultValue: "",
-    varEnum: "",
-    varReadOnly: "",
+    type: "",
+    value: "",
+    default: "",
+    enum: "",
+    readonly: "",
   });
 
   const onChange = (e) => {
@@ -42,9 +42,9 @@ function VariableInputForm({ SubmitInputVar, varInput }) {
     setChecked(!checked);
   };
 
-  const splitedTypes = varInput.varType.includes("|")
-    ? varInput.varType.split("|")
-    : varInput.varType;
+  const splitedTypes = varInput.type.includes("|")
+    ? varInput.type.split("|")
+    : varInput.type;
 
   const displayTypes =
     typeof splitedTypes === "object" ? (
@@ -95,30 +95,30 @@ function VariableInputForm({ SubmitInputVar, varInput }) {
             <Element>
               <Label htmlFor="type">Type:</Label>
               <InputWrapper>
-                <Input type="text" name="varType" onChange={onChange} />
+                <Input type="text" name="type" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="value">Value:</Label>
               <InputWrapper>
-                <Input type="text" name="varValue" onChange={onChange} />
+                <Input type="text" name="value" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="default">Default value:</Label>
               <InputWrapper>
-                <Input type="text" name="varDefaultValue" onChange={onChange} />
+                <Input type="text" name="default" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="enum">Enum:</Label>
               <InputWrapper>
-                <Input type="text" name="varEnum" onChange={onChange} />
+                <Input type="text" name="enum" onChange={onChange} />
               </InputWrapper>
             </Element>
             <Element>
               <Label htmlFor="readonly">Read only:</Label>
-              <Input type="checkbox" name="varReadOnly" onChange={onChange} />
+              <Input type="checkbox" name="readonly" onChange={onChange} />
             </Element>
           </Elements>
           <SubmitButton type="submit">Submit Input</SubmitButton>

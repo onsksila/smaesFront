@@ -51,8 +51,8 @@ const EditOutputVarForm = ({
           <InputWrapper>
             <Input
               type="text"
-              name="varType"
-              value={state.varType}
+              name="type"
+              value={state.type}
               onChange={onChange}
             />
           </InputWrapper>
@@ -62,8 +62,8 @@ const EditOutputVarForm = ({
           <InputWrapper>
             <Input
               type="text"
-              name="varValue"
-              value={state.varValue}
+              name="value"
+              value={state.value}
               onChange={onChange}
             />
           </InputWrapper>
@@ -73,8 +73,8 @@ const EditOutputVarForm = ({
           <InputWrapper>
             <Input
               type="text"
-              name="varDefaultValue"
-              value={state.varDefaultValue}
+              name="default"
+              value={state.default}
               onChange={onChange}
             />
           </InputWrapper>
@@ -84,22 +84,22 @@ const EditOutputVarForm = ({
           <InputWrapper>
             <Input
               type="text"
-              name="varEnum"
-              value={state.varEnum}
+              name="enum"
+              value={state.enum}
               onChange={onChange}
             />
           </InputWrapper>
         </Element>
         <Element>
           <Label htmlFor="readonly">Read only:</Label>
-          <Input type="checkbox" name="varReadOnly" onChange={onChange} />
+          <Input type="checkbox" name="readonly" onChange={onChange} />
           {/*  <Label htmlFor="readonly">Read only:</Label>
           <CheckboxWrapper>
             <Check
               checked={checkedOut}
               onChange={onChange}
               id="check"
-              name="varReadOnly"
+              name="readonly"
             />
             <Checkmark htmlFor="check" checked={checked} />
     </CheckboxWrapper>*/}
